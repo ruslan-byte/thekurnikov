@@ -1,0 +1,70 @@
+.left-top {
+    grid-area: left-top;
+    align-self: end;
+    overflow: visible;
+    width: 100%;
+    @media @mobile { height: 100%; }
+    .left-top_about {
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        -webkit-transform: translateY(-1000px);
+        transform: translateY(-1000px);
+        opacity: 0;
+        padding-top: 5px;
+
+        &.done {
+            -webkit-animation: slide-in-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            animation: slide-in-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @media @mobile {
+            display: block;
+        }
+
+        &-title {
+            .typography__text-bold();
+            @media @smallDesktop { font-size: 14px; }
+            @media @mobile {
+                font-size: 14px;
+                letter-spacing: 0.6px;
+                line-height: 19px;
+                margin-bottom: 19px;
+            }
+        }
+
+        &-position {
+            .typography__text-regular();
+            @media @smallDesktop { font-size: 14px; }
+            margin-left: 10px;
+            position: relative;
+            transform: translateX(-10px);
+            &::before {
+                content: url("../../assets/point-icon.svg");
+                position: absolute;
+                left: -33px;
+            }
+            @media @tablet {
+                margin-bottom: 6px;
+            }
+            @media @mobile {
+                display: none;
+            }
+        }
+
+        &-container {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            width: clamp(313px, 50%, 459px);
+            align-items: self-start;
+            @media @tablet 
+            {
+                width: unset;
+                flex-direction: column;
+                align-items: start;
+            }
+        }
+    }
+}

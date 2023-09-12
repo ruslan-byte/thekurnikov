@@ -1,0 +1,181 @@
+//clamp(313px,50%,453px)
+.left-main {
+    grid-area: left-main;
+    align-self: end;
+
+    .left-main-description {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
+
+        &_about {
+            display: flex;
+            justify-content: space-between;
+            -webkit-animation: slide-in-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.4s both;
+            animation: slide-in-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.4s both;
+
+            &-title {
+                .typography__text-bold();
+            }
+
+            &-position {
+                .typography__text-regular();
+                margin-left: 10px;
+            }
+
+            p {
+                .typography__text-regular();
+            }
+
+            &-actions {
+                margin-left: 20px;
+                .typography__text-regular();
+
+                &__container {
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                svg {
+                    transition: all 0.3s linear;
+
+                    &:hover path {
+                        fill: @color_active;
+                    }
+                }
+            }
+
+            &-container {
+                display: flex;
+                align-items: center;
+            }
+        }
+        &_links {
+            ul {
+                width: 100%;
+                li {
+                    position: relative;
+                    cursor: pointer;
+                    width: 100%;
+                    display: flex;
+                    .typography__text-regular();
+                    padding: 20px 0;
+                    overflow: hidden;
+                    opacity: 0.6;
+                    justify-content: space-between;
+                    -webkit-animation: tracking-in-contract 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+                    animation: tracking-in-contract 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+
+                    @media @mobile { padding: 18px 0; }
+                    @media @smallDesktop { font-size: 14px; }
+                    @media (min-width: 768px) and (max-height: 800px) {
+                        padding: 12px 0;
+                    }
+                    .description {
+                        display: flex;
+                        justify-content: space-between;
+                        width: clamp(313px,50%, 453px);
+
+                        @media @tablet {
+                            max-width: 50px;
+                            justify-content: flex-end !important;
+                        }
+
+                        &_year {
+                            margin-left: 20px;
+                        }
+
+                        &_subtitle {
+                            @media @tablet {
+                                display: none !important;
+                            }
+                        }
+                    }
+
+                    &:hover,
+                    &.active {
+                        opacity: 1 !important;
+                    }
+
+                    &:not(.no-hover):after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        height: 1px;
+                        width: 0%;
+                        background-color: @color_primary_description;
+                        animation: open-line 0.3s;
+                        animation-fill-mode: forwards;
+                    }
+
+                    &:not(.no-hover):hover::after {
+                        background-color: transparent;
+                    }
+
+                    &:not(.no-hover):hover::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        height: 1px;
+                        width: 0%;
+                        animation-delay: 0s;
+                        background-color: @color_primary_description;
+                        animation: open-hover-line 0.5s;
+                        animation-fill-mode: both;
+                    }
+                }
+            }
+
+            ul.right-list {
+                li {
+                    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+                    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+                    opacity: 1;
+                    a {
+                        display: flex;
+                        .typography__text-bold();
+                        
+                        text-decoration: none;
+                        justify-content: space-between;
+                        width: 100%;
+                        color: @color_primary_text;
+                        align-items: center;
+                    }
+
+                    svg {
+                        transition: all 0.3s linear;
+                        opacity: 0;
+                    }
+
+                    &:not(.no-hover):hover {
+                        svg {
+                            opacity: 1;
+                        }
+                    }
+
+                    &:not(.no-hover):hover::after {
+                        background-color: transparent;
+                    }
+                    &:not(.no-hover):hover::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        height: 1px;
+                        width: 0%;
+                        animation-delay: 0s;
+                        background-color: @color_primary_description;
+                        animation: open-hover-line 0.5s;
+                        animation-fill-mode: both;
+                    }
+                }
+            }
+        }
+    }
+}
