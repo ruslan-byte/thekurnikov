@@ -949,6 +949,15 @@ section.logo span.loading.done {
   line-height: 0;
 }
 
+.footer .footer-connect a svg {
+  width: 13px;
+  height: 13px;
+}
+
+.footer .footer-connect a:last-of-type {
+  margin: 0;
+}
+
 @media screen and (width <= 767px) {
   .footer .footer-connect a {
     margin-right: 24px;
@@ -983,6 +992,7 @@ section.logo span.loading.done {
 @media screen and (width <= 767px) {
   .box {
     margin-right: 16px;
+    transform: translateY(-4px);
   }
 }
 
