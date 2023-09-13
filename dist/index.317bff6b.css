@@ -312,7 +312,6 @@ section.logo span.loading.done {
 
 @media screen and (width <= 767px) {
   .left-top .left-top_about-title {
-    letter-spacing: .6px;
     margin-bottom: 19px;
     font-size: 14px;
     line-height: 19px;
@@ -880,15 +879,15 @@ section.logo span.loading.done {
   overflow: hidden;
 }
 
-@media screen and (width <= 767px) {
-  .footer {
-    font-size: 12px;
-  }
-}
-
 @media screen and (width <= 1439px) {
   .footer {
     font-size: 14px;
+  }
+}
+
+@media screen and (width <= 767px) {
+  .footer {
+    font-size: 12px;
   }
 }
 
@@ -947,6 +946,7 @@ section.logo span.loading.done {
 
 .footer .footer-connect a {
   margin-right: 20px;
+  line-height: 0;
 }
 
 @media screen and (width <= 767px) {
@@ -956,6 +956,11 @@ section.logo span.loading.done {
 
   .footer .footer-connect a:last-of-type {
     margin: 0;
+  }
+
+  .footer .footer-connect a svg {
+    width: 13px;
+    height: 13px;
   }
 }
 
