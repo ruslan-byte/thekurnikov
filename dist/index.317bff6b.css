@@ -411,7 +411,7 @@ section.logo span.loading.done {
 
 @media screen and (width <= 1440px) {
   .right-top .right-top_about p {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -437,7 +437,7 @@ section.logo span.loading.done {
 .right-top .right-top_about-actions__container {
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 24px;
   display: flex;
 }
 
@@ -978,8 +978,7 @@ section.logo span.loading.done {
 }
 
 .footer .footer-connect a svg {
-  width: 13px;
-  height: 13px;
+  height: 11px;
 }
 
 .footer .footer-connect a:last-of-type {
